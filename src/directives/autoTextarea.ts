@@ -14,7 +14,7 @@ export const autoTextarea = {
     //Resizes text areas on the beginning (the dawn of time...)
     resize(el)
     //Resizes textareas when input
-    el.oninput = (event) => {
+    el.oninput = () => {
       resize(el)
     }
   }

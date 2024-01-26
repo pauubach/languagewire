@@ -1,10 +1,5 @@
 import segments from '@/api/mock-data.json'
 
-interface TextCollection {
-  id: number
-  texts: Array<Text>
-}
-
 export const api = {
   get: (url: string) => {
     console.log(
