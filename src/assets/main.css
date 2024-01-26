@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.notification-msg {
+  @apply flex relative items-center py-2 px-3 border-l-4 shadow-md mb-2 min-w-60 right-0 z-50;
+}
+
+.input {
+  @apply block py-2.5 mt-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-200;
+}
+
+.label {
+  @apply absolute text-sm dark:text-gray-100 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-gray-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:ml-0;
+}
+.black-label {
+  @apply text-gray-900 dark:text-gray-50;
+}
+.label:not(.black-label) {
+  @apply text-gray-400 dark:text-gray-200;
+}
+.label-with-icon {
+  width: calc(100% - 2.5rem);
+  @apply ml-10 text-ellipsis truncate dark:text-gray-100;
+}
+
+.icon-flag {
+  @apply absolute top-2 w-8 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-gray-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:hidden rtl:peer-focus:hidden;
+}
+
+.btn-primary {
+  @apply bg-orange-200 text-gray-50 text-sm p-1.5 transition duration-300;
+}
+
+.btn-primary:not(:disabled) {
+  @apply bg-orange-400 hover:shadow-gray-500 shadow-sm text-white text-sm;
+}
+
+.btn-outline {
+  @apply border-orange-200 text-orange-200 border-2 text-sm p-1.5 transition duration-300;
+}
+.btn-outline:not(:disabled) {
+  @apply border-orange-400 text-orange-400 border-2 hover:shadow-gray-500 hover:bg-orange-50 hover:dark:bg-orange-800 hover:dark:bg-opacity-10 shadow-sm text-sm p-1.5;
+}
+
+.page-box {
+  @apply border-solid border-2 shadow-inner mb-4 py-4 grid grid-cols-1 md:grid-cols-2 rounded-lg;
+}
+
+.text-box {
+  @apply resize-none border-2 border-solid shadow overflow-hidden mx-4 py-2 px-2 lg:px-4 rounded-md dark:bg-zinc-900 dark:text-gray-300;
+}
+.text-box-first {
+  @apply order-first select-none outline-none cursor-default border-gray-200 dark:border-zinc-700 mb-4 md:mb-0 dark:text-gray-400;
+}
+.text-box-last {
+  @apply order-last border-gray-400;
+}

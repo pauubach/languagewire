@@ -1,0 +1,140 @@
+{
+  "get_segments": {
+    "page": [
+      {
+        "id": 1,
+        "texts": [
+          {
+            "id": 1,
+            "language": "en",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          },
+          {
+            "id": 2,
+            "language": "es",
+            "text": ""
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "texts": [
+          {
+            "id": 3,
+            "language": "en",
+            "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          },
+          {
+            "id": 4,
+            "language": "es",
+            "text": "Edam fromage lancashire feta caerphilly everyone loves chalk and cheese brie. Red leicester parmesan cheese and biscuits cheesy feet blue castello cheesecake fromage frais smelly cheese."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "texts": [
+          {
+            "id": 5,
+            "language": "en",
+            "text": "Edam fromage lancashire feta caerphilly everyone loves chalk and cheese brie. Red leicester parmesan cheese and biscuits cheesy feet blue castello cheesecake fromage frais smelly cheese."
+          },
+          {
+            "id": 6,
+            "language": "es",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "texts": [
+          {
+            "id": 7,
+            "language": "en",
+            "text": "Edam fromage lancashire feta caerphilly everyone loves chalk and cheese brie. Red leicester parmesan cheese and biscuits cheesy feet blue castello cheesecake fromage frais smelly cheese."
+          },
+          {
+            "id": 8,
+            "language": "es",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "texts": [
+          {
+            "id": 9,
+            "language": "en",
+            "text": "Webtwo ipsum orkut reddit meebo skype vimeo jajah spock empressr zimbra, mobly napster hipmunk prezi chartly bitly spock. "
+          },
+          {
+            "id": 10,
+            "language": "es",
+            "text": "A business big enough that it could be listed on the NASDAQ goes belly up."
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "texts": [
+          {
+            "id": 11,
+            "language": "en",
+            "text": "A slice of heaven. O for awesome, this chocka full cuzzie is as rip-off as a cracker. Meanwhile, in behind the bicycle shed, Hercules Morse, as big as a horse and Mrs Falani were up to no good with a bunch of crook pikelets."
+          },
+          {
+            "id": 12,
+            "language": "es",
+            "text": ""
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "texts": [
+          {
+            "id": 13,
+            "language": "en",
+            "text": "A slice of heaven. O for awesome, this chocka full cuzzie is as rip-off as a cracker. Meanwhile, in behind the bicycle shed, Hercules Morse, as big as a horse and Mrs Falani were up to no good with a bunch of crook pikelets."
+          },
+          {
+            "id": 14,
+            "language": "es",
+            "text": "Cheese on toast airedale the big cheese. Danish fontina cheesy grin airedale danish fontina taleggio the big cheese macaroni cheese port-salut."
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "texts": [
+          {
+            "id": 15,
+            "language": "en",
+            "text": "Lorem"
+          },
+          {
+            "id": 16,
+            "language": "es",
+            "text": "Lorem"
+          }
+        ]
+      }
+    ]
+  },
+  "get_languages": [
+    {
+      "name": "English (United Kingdom)",
+      "tag": "en-GB"
+    },
+    {
+      "name": "Spanish (Spain)",
+      "tag": "es-ES"
+    },
+    {
+      "name": "Portuguese (Portugal)",
+      "tag": "pt-PT"
+    }
+  ]
+}
