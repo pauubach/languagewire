@@ -1,49 +1,51 @@
-# lw
+# Languagewire test app
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+### Run the project with
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+Then, in your browser:
 
 ```sh
-npm run build
+http://localhost:5173/
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+or if you wish a fast navigation including languages combination:
+
+```sh
+http://localhost:5173/en-GB/es-ES
+```
+
+### Run Unit Tests with
 
 ```sh
 npm run test:unit
 ```
+
+## Tech
+
+- I decided to use Vue, as it is what you use (me too). Opted for v.3 with composition API.
+- Used Vue Router as language changer, so http://localhost:5173/es-ES/en-GB will have es-ES as source and en-GB as target. http://localhost:5173/ will take the first two languages available in the languages list.
+- Pinia as state manager. I chose the composition API too.
+- Created a custom directive to control textarea size.
+- Although I'm more used to Vuetify, bootstrap, etc. You mentioned Tailwind so, I picked this one.
+- Normally I would split the code with composables, but due the size of the project I found it unnecessary.
+- Testing isn't one of my strengths but I wrote some of them with Vitest.
+- Used git too, although in a late state (after the third day programming).
+
+## Design
+
+- Instead of having a source and target language selects visible, I chose to have them in a box and not call the server as selects are changed to avoid unneeded server requests.
+- There's also a button to swap languages.
+- Selects have the language flag, and it's possible to filter writing part of the language name or tag. (Well, it doesn't make sense as there are only 3 languages, but I wanted to play with the idea).
+- Key navigation could have been a great improvement, in order to select a language with the keyboard, but it was a bit too much for this exercise.
+- The app is responsive (mobile first) and dark mode has been taken into consideration.
 
 ### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
 
@@ -59,10 +61,4 @@ But it's still recommended to test the production build with `test:e2e` before d
 ```sh
 npm run build
 npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
