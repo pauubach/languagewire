@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <svg
-    viewBox="0 0 4 20"
+    viewBox="0 0 6 20"
     xmlns="http://www.w3.org/2000/svg"
 >
     <title>Arrow</title>
-    <line x1="0" y1="4" x2="4" y2="11" style="stroke: #000; stroke-width: 1.5" />
-    <line x1="0" y1="16" x2="4" y2="9" style="stroke: #000; stroke-width: 1.5" />
+    <line x1="1" y1="5" x2="5" y2="10" style="stroke: #000; stroke-width: 1.5" stroke-linecap='round' />
+    <line x1="1" y1="16" x2="5" y2="10" style="stroke: #000; stroke-width: 1.5" stroke-linecap='round' />
 </svg>
