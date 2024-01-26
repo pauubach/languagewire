@@ -36,8 +36,8 @@ npm run test:unit
 - Created a custom directive to control textarea size.
 - Although I'm more used to Vuetify, bootstrap, etc. You mentioned Tailwind so, I picked this one.
 - Normally I would split the code with composables, but due the size of the project I found it unnecessary.
-- Testing isn't one of my strengths but I wrote some of them with Vitest.
-- Used git too, although in a late state (after the third day programming).
+- Testing isn't one of my strengths but I wrote some of them with Vitest. I didn't pretend to be exhaustive.
+- Used git too, although in a late state (after the third day programming), only used a branch breaking all gitflow recommendations.
 
 ## Design
 
@@ -47,18 +47,6 @@ npm run test:unit
 - Key navigation could have been a great improvement, in order to select a language with the keyboard, but it was a bit too much for this exercise.
 - The app is responsive (mobile first) and dark mode has been taken into consideration.
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+## Problems found
 
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
+- Languages tag have "en-GB" format, while translations have "en", so I'm using startsWith function. In case it changes this could be replaced by equal.
