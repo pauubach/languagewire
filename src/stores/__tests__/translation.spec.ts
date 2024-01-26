@@ -8,7 +8,7 @@ describe('Translation store', () => {
     setActivePinia(createPinia())
   })
 
-  it('Languages load', () => {
+  it('Languages are loaded and first languages set as default', () => {
     const store = useTranslationStore()
     const { languages, source, target } = storeToRefs(store)
     expect(languages.value).toHaveLength(0)
@@ -30,7 +30,7 @@ describe('Translation store', () => {
     expect(translations.value).not.toHaveLength(0)
   })
 
-  it('Custom navigation language load', async () => {
+  it('Custom navigation loads languages', async () => {
     const store = useTranslationStore()
     const { languages, translations, source, target } = storeToRefs(store)
 
