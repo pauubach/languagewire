@@ -13,7 +13,8 @@ export const useNotificationStore = defineStore('notification', () => {
 
   /**
    * This will create a new message, add to the msgs array,
-   * show, hide (time can be changed) and destroy
+   * show, hide (time can be changed) and destroy.
+   * Counter is used here to create an ID for each message, and have a control for hiding and destruction.
    */
   const openToast = (msg: string, type: string, time = 4000): void => {
     // Create the message
