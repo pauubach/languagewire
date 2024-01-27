@@ -31,7 +31,7 @@ npm run test:unit
 ## Tech
 
 - I decided to use Vue, as it is what you use (me too). Opted for v.3 with composition API.
-- Used Vue Router as language changer, so http://localhost:5173/es-ES/en-GB will have _es-ES_ as source and _en-GB_ as target. http://localhost:5173/ will take the first two languages available in the languages list.
+- Used Vue Router as language changer, so http://localhost:5173/es-ES/en-GB will have `es-ES` as source and `en-GB` as target. http://localhost:5173/ will take the first two languages available in the languages list.
 - Pinia as state manager. With composition API here too.
 - Made a custom directive to control textarea size.
 - Although I'm more used to Vuetify, Bootstrap, etc. You mentioned Tailwind so I picked this one.
@@ -41,8 +41,8 @@ npm run test:unit
 
 ## Design
 
-- Instead of having a source and target language selects visible, I chose to have them in a box and not call the server as selects are changed to avoid unneeded server requests.
-- There's also a button to swap languages.
+- Instead of having a source and target language selects visible, I decided to have them in a box and not call the server as selects are changed to avoid unneeded server requests. Call is done when _Apply_ button is clicked.
+- There's also a button to swap languages. Again, there are no API calls until _Apply_ is clicked.
 - Selects have the language flag, and it's possible to filter writing part of the language name or tag. (Well, it doesn't make sense as there are only 3 languages, but I wanted to play with the idea).
 - Key navigation could have been a great improvement, in order to select a language with the keyboard, but it was a bit too much for this exercise.
 - The app is responsive (mobile first) and dark mode has been taken into consideration.
