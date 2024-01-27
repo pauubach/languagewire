@@ -71,44 +71,58 @@ watch(
         </label>
       </div>
     </div>
-    <div
-      :id="`${id}Selector`"
-      class="flex flex-col items-center relative"
-      :class="{ hidden: !opened }"
-    >
-      <div
-        class="absolute shadow bg-white top-100 z-40 w-full lef-0 rounded-b-md overflow-y-auto overflow-x-hidden"
-      >
-        <div class="flex flex-col w-full">
-          <div
-            v-for="language in getLanguages"
-            :key="language.tag"
-            class="cursor-pointer w-full border-gray-100 border-b hover:bg-orange-100"
-            @click="
-              (selected = language.tag),
-                $emit('close'),
-                $emit('changeLanguage', selected),
-                (text = '')
-            "
-          >
-            <div class="flex w-full items-center p-2 pl-2 border-transparent border-l-2 relative">
-              <div class="w-6 flex flex-col items-center">
-                <div class="flex relative w-6 justify-center items-center m-1 mr-2 h-4 mt-1">
-                  <img alt="flag" :src="`/flags/${language.tag}.png`" />
+    <div :id="`${id}Selector`" class="flex flex-col items-center relative">
+      <Transition>
+        <div
+          v-if="opened"
+          class="absolute shadow bg-white top-100 z-40 w-full lef-0 rounded-b-md overflow-y-auto overflow-x-hidden"
+        >
+          <div class="flex flex-col w-full">
+            <div
+              v-for="language in getLanguages"
+              :key="language.tag"
+              class="cursor-pointer w-full border-gray-100 border-b hover:bg-orange-100"
+              @click="
+                (selected = language.tag),
+                  $emit('close'),
+                  $emit('changeLanguage', selected),
+                  (text = '')
+              "
+            >
+              <div class="flex w-full items-center p-2 pl-2 border-transparent border-l-2 relative">
+                <div class="w-6 flex flex-col items-center">
+                  <div class="flex relative w-6 justify-center items-center m-1 mr-2 h-4 mt-1">
+                    <img alt="flag" :src="`/flags/${language.tag}.png`" />
+                  </div>
                 </div>
-              </div>
-              <div class="w-11/12 items-center flex">
-                <div class="mx-2 -mt-1 text-sm truncate">
-                  {{ language.name }}
-                  <div class="text-xs truncate w-full normal-case font-normal -mt-1 text-gray-500">
-                    {{ language.tag }}
+                <div class="w-11/12 items-center flex">
+                  <div class="mx-2 -mt-1 text-sm truncate">
+                    {{ language.name }}
+                    <div
+                      class="text-xs truncate w-full normal-case font-normal -mt-1 text-gray-500"
+                    >
+                      {{ language.tag }}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </Transition>
     </div>
   </div>
 </template>
+
+<style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: transform 0.2s ease;
+  transform-origin: 50% 0 0;
+}
+
+.v-enter-from,
+.v-leave-to {
+  transform: scaleY(0);
+}
+</style>
