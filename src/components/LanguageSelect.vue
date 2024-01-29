@@ -8,13 +8,15 @@
  */
 import { ref, computed, watch } from 'vue'
 
+const emit = defineEmits(['open', 'close', 'changeLanguage'])
+
 const props = defineProps<{
   id: string
   value: string | null
   languages: Array<{
     tag: string
     name: string
-  }> | null
+  }>
   opened: Boolean
 }>()
 
@@ -44,10 +46,37 @@ watch(
     selected.value = props.value
   }
 )
+
+const keynav = (event: KeyboardEvent) => {
+  const key = event.code
+  if (key == 'Enter') {
+    if (getLanguages.value.length == 1) {
+      // If filtering results have only one language select this one.
+      selected.value = getLanguages.value[0].tag
+    }
+    ;(document.querySelector(':focus') as HTMLElement)?.blur()
+    emit('close')
+    emit('changeLanguage', selected.value)
+    text.value = ''
+    return
+  }
+  if (key == 'ArrowUp' || key == 'ArrowDown') {
+    const increment = key == 'ArrowDown' ? 1 : -1
+    let index = getLanguages.value.findIndex((lang) => lang.tag == selected.value)
+    if (index !== -1) {
+      // If the language selected is found in the results move up or down
+      index = (index + increment + getLanguages.value.length) % getLanguages.value.length
+      selected.value = getLanguages.value[index].tag
+    } else {
+      // If the language isn't in the results select the first one
+      selected.value = getLanguages.value[0].tag
+    }
+  }
+}
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="w-full" @keydown="keynav">
     <div>
       <div class="relative z-0">
         <input
@@ -56,6 +85,7 @@ watch(
           type="text"
           class="input peer truncate dark:text-gray-50"
           placeholder=" "
+          autocomplete="off"
           @focus="$emit('open')"
           @focusout="text = ''"
         />
@@ -81,7 +111,8 @@ watch(
             <div
               v-for="language in getLanguages"
               :key="language.tag"
-              class="cursor-pointer w-full border-gray-100 border-b hover:bg-orange-100"
+              class="cursor-pointer w-full border-gray-100 border-b hover:bg-orange-100 focus:bg-orange-100"
+              :class="{ 'bg-orange-100': language.tag == selected }"
               @click="
                 (selected = language.tag),
                   $emit('close'),
@@ -99,7 +130,7 @@ watch(
                   <div class="mx-2 -mt-1 text-sm truncate">
                     {{ language.name }}
                     <div
-                      class="text-xs truncate w-full normal-case font-normal -mt-1 text-gray-500"
+                      class="text-xs truncate w-full normal-case font-normal -mt-1 text-gray-400"
                     >
                       {{ language.tag }}
                     </div>
