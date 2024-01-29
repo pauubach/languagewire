@@ -36,7 +36,7 @@ npm run test:unit
 - Made a custom directive to control textarea size.
 - Although I'm more used to Vuetify, Bootstrap, etc. You mentioned **Tailwind** so I picked this one.
 - Normally I would split the code with composables, but due the size of the project I found it unnecessary.
-- Testing isn't one of my strengths but I wrote some of them with **Vitest**. I didn't pretend to be exhaustive.
+- Testing isn't one of my strengths but I wrote some unit tests with **Vitest**. I didn't pretend to be exhaustive.
 - Used **git** too, although in a late state and only used a branch breaking all gitflow recommendations.
 
 ## Design
